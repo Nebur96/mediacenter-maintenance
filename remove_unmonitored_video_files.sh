@@ -8,13 +8,13 @@
 VERBOSE=false
 
 # torrent client download folder
-TORRENT_DOWNLOAD_FOLDER=/home/data/torrents
+TORRENT_DOWNLOAD_FOLDER=/home/rfpereira/data/torrents
 # usenet client download folder
-USENET_DOWNLOAD_FOLDER=/home/data/downloads
+USENET_DOWNLOAD_FOLDER=/home/rfpereira/data/downloads
 # radarr symlink movies folder
-MOVIES_FOLDER=/home/data/media/movies
+MOVIES_FOLDER=/home/rfpereira/data/media/movies
 # sonarr symlink tv shows folder
-TV_SHOWS_FOLDER=/home/data/media/tv
+TV_SHOWS_FOLDER=/home/rfpereira/data/media/tv
 
 ################
 # SCRIPT LOGIC #
@@ -51,7 +51,7 @@ if (($unusedFilesCount>0)); then
     rm "$file"
     videoFiles=$(find $folder -type f | grep -E "\.webm$|\.flv$|\.vob$|\.ogg$|\.ogv$|\.drc$|\.gifv$|\.mng$|\.avi$|\.mov$|\.qt$|\.wmv$|\.yuv$|\.rm$|\.rmvb$|/.asf$|\.amv$|\.mp4$|\.m4v$|\.mp*$|\.m?v$|\.svi$|\.3gp$|\.flv$|\.f4v$")
     if [ -z "$videoFiles" ]; then
-	    rm "$folder"
+	    rm -rf "$folder"
     fi;
   done
 fi;
