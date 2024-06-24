@@ -51,7 +51,7 @@ if (($unusedFilesCount>0)); then
     rm "$file"
     videoFiles=$(find $folder -type f | grep -E "\.webm$|\.flv$|\.vob$|\.ogg$|\.ogv$|\.drc$|\.gifv$|\.mng$|\.avi$|\.mov$|\.qt$|\.wmv$|\.yuv$|\.rm$|\.rmvb$|/.asf$|\.amv$|\.mp4$|\.m4v$|\.mp*$|\.m?v$|\.svi$|\.3gp$|\.flv$|\.f4v$")
     if [ -z "$videoFiles" ]; then
-	    rm "$folder"
+	    rm -rf "$folder"
     fi;
   done
 fi;
